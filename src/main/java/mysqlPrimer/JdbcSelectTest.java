@@ -29,6 +29,7 @@ public class JdbcSelectTest{
 			 System.out.println("Total number of records = " + rowCount);
 		}catch(SQLException ex) {
 	         ex.printStackTrace();
+	         
 	      }
 		
 	}

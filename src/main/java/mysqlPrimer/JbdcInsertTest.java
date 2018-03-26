@@ -2,8 +2,6 @@ package mysqlPrimer;
 import java.sql.*;
 
 
-
-
 public class JbdcInsertTest {
 
 	public static void main(String[] args) {
