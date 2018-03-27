@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class JdbcSelectTest{
 
-	public static void main(String[] args) throws SQLException {
+	public void Select() throws SQLException {
 		
 			Statement stmt= Connector.conStat().createStatement();
 			

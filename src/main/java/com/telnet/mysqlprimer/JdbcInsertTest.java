@@ -3,9 +3,9 @@ import java.sql.*;
 
 
 
-public class JbdcInsertTest {
+public class JdbcInsertTest {
 
-	public static void main(String[] args) throws SQLException {
+	public void Insert() throws SQLException {
 		
 		
 				Statement stmt= Connector.conStat().createStatement();

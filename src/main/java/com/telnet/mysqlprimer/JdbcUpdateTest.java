@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class JdbcUpdateTest {
 
-	public static void main(String[] args) throws SQLException {
+	public void Update() throws SQLException {
 		
 			Statement stmt= Connector.conStat().createStatement();
 			
