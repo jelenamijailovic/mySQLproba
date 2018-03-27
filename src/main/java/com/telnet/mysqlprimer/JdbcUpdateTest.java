@@ -1,15 +1,13 @@
-package mysqlPrimer;
+package com.telnet.mysqlprimer;
 import java.sql.*;
 
 public class JdbcUpdateTest {
 
-	public static void main(String[] args) {
-		try(
-				Connection conn= DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/ebookshop?useSSL=false", "root", "qqq");
-				Statement stmt= conn.createStatement();
-				)
-		{
+	public static void main(String[] args) throws SQLException {
+		
+			Statement stmt= Connector.conStat().createStatement();
+			
+		
 			String sqlUpdate= "update books set price= price*0.7, qty= qty+1 where id= 1001";
 			System.out.println("The SQL query is:"+ sqlUpdate);
 			int countUpdated= stmt.executeUpdate(sqlUpdate);
@@ -25,9 +23,7 @@ public class JdbcUpdateTest {
 				rset.getDouble("price")+", "+
 				rset.getInt("qty"));
 			}
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
+		
 
 	}
 

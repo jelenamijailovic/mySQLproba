@@ -1,16 +1,15 @@
-package mysqlPrimer;
+package com.telnet.mysqlprimer;
 import java.sql.*;
+
 
 
 public class JbdcInsertTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
-		try(
-				Connection conn= DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/ebookshop?useSSL=false", "root", "qqq");
-				Statement stmt= conn.createStatement();
-				){
+		
+				Statement stmt= Connector.conStat().createStatement();
+				
 			String sqlDelete= "delete from books where id>=3000 and id<4000";
 			System.out.println("The SQL query is:"+ sqlDelete);
 			int countDeleted= stmt.executeUpdate(sqlDelete);
@@ -49,9 +48,7 @@ public class JbdcInsertTest {
 		                     + rset.getInt("qty"));
 		         }
 		         
-		}catch(SQLException ex) {
-	         ex.printStackTrace();
-	      }
+		
 		
 	}
 

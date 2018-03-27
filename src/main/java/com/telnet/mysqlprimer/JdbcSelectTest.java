@@ -1,16 +1,13 @@
-package mysqlPrimer;
+package com.telnet.mysqlprimer;
 import java.sql.*; 
 
 public class JdbcSelectTest{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
-		try(
-				Connection conn= DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/ebookshop?useSSL=false", "root", "qqq"
-						);
-				Statement stmt= conn.createStatement();
-				){
+			Statement stmt= Connector.conStat().createStatement();
+			
+			
 			String sqlSelect= "select title, price, qty from books";
 			System.out.println("The SQL query is:"+sqlSelect);
 			System.out.println();
@@ -27,10 +24,7 @@ public class JdbcSelectTest{
 				++rowCount;
 			}
 			 System.out.println("Total number of records = " + rowCount);
-		}catch(SQLException ex) {
-	         ex.printStackTrace();
-	         
-	      }
+		
 		
 		
 	}
