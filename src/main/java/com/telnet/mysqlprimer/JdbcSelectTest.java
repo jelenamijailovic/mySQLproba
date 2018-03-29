@@ -5,7 +5,7 @@ public class JdbcSelectTest{
 
 	public void Select() throws SQLException {
 		
-			Statement stmt= Connector.conStat().createStatement();
+		Statement stmt = Connector.conStat().createStatement();
 			
 			
 			String sqlSelect= "select title, price, qty from books";
